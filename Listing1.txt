@@ -1,0 +1,10 @@
+#include <Keyboard.h>
+
+void setup() {
+  Keyboard.begin();
+}
+
+void loop() {
+  delay(1000);
+  Keyboard.println("Hello, Make!");
+}

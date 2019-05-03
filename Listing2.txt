@@ -1,0 +1,16 @@
+#include <HID-Project.h>
+
+void setup() {
+  // Initialize Consumer API
+  Consumer.begin();
+}
+
+void loop() {  
+  // Send media key codes
+  Consumer.write(MEDIA_VOL_UP);
+  delay(200);
+  Consumer.write(MEDIA_VOL_DOWN);
+  delay(200);
+  Consumer.write(MEDIA_VOL_MUTE);
+  delay(200);
+}

@@ -1,0 +1,21 @@
+#include <ClickEncoder.h>
+#include <TimerOne.h>
+
+ClickEncoder encoder(A1, A0, A2);
+
+void timerIsr() {
+  encoder.service();
+}
+
+void setup() {
+  Timer1.initialize(1000);
+  Timer1.attachInterrupt(timerIsr);
+}
+
+void loop() {
+  int16_t current = encoder.getValue();
+  ClickEncoder::Button b = encoder.getButton();
+  if (b != ClickEncoder::Open) {
+    // ... 
+  }
+}

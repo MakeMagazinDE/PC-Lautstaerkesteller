@@ -1,0 +1,17 @@
+#include <Adafruit_NeoPixel.h>
+
+#define NR_OF_PIXELS   12
+#define LIGHT_PIN      10
+
+Adafruit_NeoPixel strip(NR_OF_PIXELS, LIGHT_PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  strip.begin();
+
+  const uint32_t green = strip.Color(0, 255, 0);
+  // Alle LEDS auf grün.
+  for (uint16_t i = 0; i < strip.numPixels(); i++) {
+      strip.setPixelColor(i, green);
+  }
+  strip.show();
+}
