@@ -24,8 +24,8 @@ void setup() {
   setColor(BLACK);
 
   pinMode(VIBRA_PIN, OUTPUT);  
-
-  Timer1.attachInterrupt([](){ encoder.service(); }, 1000 );
+  Timer1.initialize(1000);
+  Timer1.attachInterrupt([]{ encoder.service(); });
 
   Consumer.begin();
 }
